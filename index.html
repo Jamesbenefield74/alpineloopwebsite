@@ -1,14 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alpine Loop Adventures | Lake City Colorado Rentals</title>
-  <meta
-    name="description"
-    content="Rent Side-by-Sides, Jeeps, and Snowmobiles in Lake City, Colorado. Experience the legendary Alpine Loop with Alpine Loop Adventures."
-  />
+  <meta name="description" content="Rent Side-by-Sides, Jeeps, and Snowmobiles in Lake City, Colorado. Explore the legendary Alpine Loop with Alpine Loop Adventures." />
   <style>
     :root{
       --bg:#0c1117;
@@ -17,12 +13,12 @@
       --text:#f8fafc;
       --muted:#cbd5e1;
       --line:rgba(255,255,255,.10);
-      --accent:#d93b3b;
-      --accent-hover:#b82f2f;
-      --gold:#d6b36a;
+      --accent:#d93838;
+      --accent-hover:#b92f2f;
+      --accent-2:#d6b36a;
       --max:1200px;
-      --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:18px;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
     }
 
     *{box-sizing:border-box}
@@ -32,11 +28,11 @@
       font-family:Arial, Helvetica, sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.5;
+      line-height:1.55;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
 
     .container{
       width:min(var(--max), calc(100% - 40px));
@@ -48,17 +44,17 @@
       position:sticky;
       top:0;
       z-index:1000;
+      background:rgba(12,17,23,.88);
       backdrop-filter:blur(12px);
-      background:rgba(12,17,23,.82);
       border-bottom:1px solid var(--line);
     }
 
     .nav{
+      min-height:86px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      min-height:84px;
     }
 
     .brand{
@@ -68,25 +64,21 @@
       min-width:0;
     }
 
-    .logo-wrap{
-      width:64px;
-      height:64px;
+    .brand-logo{
+      width:68px;
+      height:68px;
       border-radius:14px;
-      overflow:hidden;
-      background:rgba(255,255,255,.06);
+      background:#fff;
+      padding:6px;
       border:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
       flex-shrink:0;
+      overflow:hidden;
     }
 
-    .site-logo{
+    .brand-logo img{
       width:100%;
       height:100%;
       object-fit:contain;
-      padding:6px;
-      background:#fff;
     }
 
     .brand-text{
@@ -94,15 +86,15 @@
       flex-direction:column;
     }
 
-    .brand-name{
-      font-size:1.2rem;
+    .brand-title{
+      font-size:1.18rem;
       font-weight:800;
       letter-spacing:.02em;
     }
 
     .brand-sub{
-      color:var(--muted);
       font-size:.92rem;
+      color:var(--muted);
     }
 
     .nav-links{
@@ -114,19 +106,11 @@
 
     .nav-links a{
       color:var(--muted);
-      font-weight:600;
+      font-weight:700;
+      font-size:.96rem;
     }
 
-    .nav-links a:hover{
-      color:#fff;
-    }
-
-    .nav-cta{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+    .nav-links a:hover{color:#fff}
 
     .btn{
       display:inline-flex;
@@ -151,31 +135,29 @@
     }
 
     .btn-secondary{
-      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.05);
+      border-color:rgba(255,255,255,.16);
       color:#fff;
-      background:rgba(255,255,255,.04);
     }
 
     .btn-secondary:hover{
-      background:rgba(255,255,255,.09);
+      background:rgba(255,255,255,.1);
     }
 
     /* Hero */
     .hero{
-      position:relative;
-      min-height:78vh;
+      min-height:84vh;
       display:flex;
       align-items:center;
       background:
-        linear-gradient(rgba(7,10,14,.45), rgba(7,10,14,.72)),
-       url("hero-alpine-loop.jpg")
-        center/cover no-repeat;
+        linear-gradient(rgba(5,8,12,.38), rgba(5,8,12,.74)),
+        url("hero-alpine-loop.jpg") center/cover no-repeat;
       border-bottom:1px solid var(--line);
     }
 
     .hero-inner{
-      padding:84px 0 72px;
       width:100%;
+      padding:90px 0 80px;
     }
 
     .eyebrow{
@@ -185,63 +167,61 @@
       border-radius:999px;
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14);
-      color:#fff;
       font-size:.9rem;
       font-weight:700;
       letter-spacing:.03em;
     }
 
     .hero h1{
-      font-size:clamp(2.3rem, 5vw, 4.7rem);
+      margin:0 0 16px;
+      font-size:clamp(2.4rem, 5vw, 4.9rem);
       line-height:1.02;
-      margin:0 0 18px;
-      max-width:900px;
-      text-shadow:0 10px 30px rgba(0,0,0,.45);
+      max-width:920px;
+      text-shadow:0 10px 28px rgba(0,0,0,.45);
     }
 
     .hero p{
-      font-size:clamp(1rem, 1.8vw, 1.28rem);
-      color:#eef2f7;
       max-width:760px;
-      margin:0 0 32px;
+      margin:0 0 28px;
+      font-size:clamp(1rem, 1.7vw, 1.25rem);
+      color:#eef2f7;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:30px;
+      margin-bottom:28px;
     }
 
     .hero-badges{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      color:#fff;
     }
 
     .badge{
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.14);
-      font-weight:700;
+      background:rgba(0,0,0,.24);
+      border:1px solid rgba(255,255,255,.15);
       font-size:.94rem;
+      font-weight:700;
     }
 
-    /* Section base */
+    /* Sections */
     section{
-      padding:78px 0;
+      padding:80px 0;
     }
 
     .section-head{
       text-align:center;
-      margin-bottom:38px;
+      margin-bottom:40px;
     }
 
     .section-head h2{
-      font-size:clamp(1.8rem, 3vw, 3rem);
       margin:0 0 10px;
+      font-size:clamp(1.8rem, 3vw, 3rem);
     }
 
     .section-head p{
@@ -254,7 +234,7 @@
     /* Experience cards */
     .cards{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:24px;
     }
 
@@ -275,11 +255,6 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:transform .35s ease;
-    }
-
-    .card:hover .card-image img{
-      transform:scale(1.04);
     }
 
     .card-body{
@@ -292,35 +267,32 @@
     }
 
     .card-body p{
-      margin:0 0 18px;
+      margin:0 0 16px;
       color:var(--muted);
     }
 
     .card-list{
       list-style:none;
       padding:0;
-      margin:0 0 22px;
-      color:#fff;
+      margin:0 0 20px;
     }
 
     .card-list li{
       padding:7px 0;
       border-bottom:1px solid rgba(255,255,255,.06);
-      font-size:.96rem;
+      font-size:.95rem;
     }
 
-    .card-list li:last-child{
-      border-bottom:none;
-    }
+    .card-list li:last-child{border-bottom:none}
 
-    /* Why section */
-    .why-grid{
+    /* Features */
+    .features{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:20px;
     }
 
-    .why-item{
+    .feature{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:16px;
@@ -328,35 +300,35 @@
       text-align:center;
     }
 
-    .why-item .icon{
-      font-size:1.8rem;
+    .feature .icon{
+      font-size:1.9rem;
       margin-bottom:12px;
     }
 
-    .why-item h4{
+    .feature h4{
       margin:0 0 8px;
       font-size:1.05rem;
     }
 
-    .why-item p{
+    .feature p{
       margin:0;
       color:var(--muted);
-      font-size:.95rem;
+      font-size:.94rem;
     }
 
-    /* CTA split */
+    /* Split section */
     .split{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1.1fr .9fr;
       gap:28px;
       align-items:stretch;
     }
 
     .panel{
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       overflow:hidden;
-      background:var(--card);
       box-shadow:var(--shadow);
     }
 
@@ -370,7 +342,7 @@
     }
 
     .panel-content p{
-      margin:0 0 22px;
+      margin:0 0 20px;
       color:var(--muted);
     }
 
@@ -380,19 +352,52 @@
       gap:12px;
     }
 
+    .map-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+    }
+
+    .map-list li{
+      padding:9px 0;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .map-list li:last-child{border-bottom:none}
+
     .photo-panel{
       min-height:100%;
       background:
         linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.28)),
-        url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80")
-        center/cover no-repeat;
+        url("jeep-rental.jpg") center/cover no-repeat;
+    }
+
+    /* Booking strip */
+    .booking-strip{
+      background:linear-gradient(135deg, rgba(217,56,56,.15), rgba(214,179,106,.10));
+      border:1px solid rgba(217,56,56,.18);
+      border-radius:var(--radius);
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .booking-strip h3{
+      margin:0 0 10px;
+      font-size:1.9rem;
+    }
+
+    .booking-strip p{
+      margin:0 auto 20px;
+      max-width:760px;
+      color:var(--muted);
     }
 
     /* Footer */
     footer{
+      background:#0a0f14;
       border-top:1px solid var(--line);
       padding:30px 0 50px;
-      background:#0a0f14;
     }
 
     .footer-grid{
@@ -419,19 +424,16 @@
       font-weight:700;
     }
 
-    .footer-links a:hover{
-      color:#fff;
-    }
+    .footer-links a:hover{color:#fff}
 
-    /* Responsive */
-    @media (max-width: 1100px){
+    @media (max-width:1100px){
       .cards{grid-template-columns:1fr 1fr}
-      .why-grid{grid-template-columns:1fr 1fr}
+      .features{grid-template-columns:1fr 1fr}
       .split{grid-template-columns:1fr}
       .photo-panel{min-height:320px}
     }
 
-    @media (max-width: 760px){
+    @media (max-width:760px){
       .nav{
         flex-direction:column;
         align-items:flex-start;
@@ -441,17 +443,9 @@
         gap:14px;
       }
       .cards{grid-template-columns:1fr}
-      .why-grid{grid-template-columns:1fr}
-      .hero{
-        min-height:70vh;
-      }
-      .hero-actions{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      .btn{
-        width:100%;
-      }
+      .features{grid-template-columns:1fr}
+      .hero-actions{flex-direction:column;align-items:flex-start}
+      .btn{width:100%}
     }
   </style>
 </head>
@@ -460,11 +454,11 @@
   <header class="topbar">
     <div class="container nav">
       <a href="#" class="brand">
-        <div class="logo-wrap">
-          <img src="logo.png" alt="Alpine Loop Adventures Logo" class="site-logo">
+        <div class="brand-logo">
+          <img src="logo.png" alt="Alpine Loop Adventures Logo">
         </div>
         <div class="brand-text">
-          <span class="brand-name">Alpine Loop Adventures</span>
+          <span class="brand-title">Alpine Loop Adventures</span>
           <span class="brand-sub">Lake City, Colorado</span>
         </div>
       </a>
@@ -472,35 +466,34 @@
       <nav class="nav-links">
         <a href="#adventures">Adventures</a>
         <a href="#why-us">Why Us</a>
+        <a href="#routes">Experience</a>
         <a href="#book">Book</a>
       </nav>
 
-      <div class="nav-cta">
-        <a class="btn btn-secondary" href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">Buy a Polaris</a>
-      </div>
+      <a class="btn btn-secondary" href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">Buy a Polaris</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <span class="eyebrow">Colorado Mountain Rentals</span>
-        <h1>Ride the Legendary Alpine Loop</h1>
+        <span class="eyebrow">Lake City Mountain Rentals</span>
+        <h1>Experience the Full Alpine Loop Adventure</h1>
         <p>
-          Rent a Side-by-Side, Jeep, or Snowmobile in Lake City and experience one of
-          the most iconic mountain adventures in Colorado.
+          Rent a Polaris Side-by-Side, Jeep, or Snowmobile and explore one of the most
+          iconic mountain destinations in Colorado from Lake City.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#adventures">View Adventures</a>
-          <a class="btn btn-secondary" href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">Shop Polaris at Lake City Auto</a>
+          <a class="btn btn-secondary" href="#book">Plan Your Trip</a>
         </div>
 
         <div class="hero-badges">
           <span class="badge">Side-by-Sides</span>
           <span class="badge">Jeep Rentals</span>
-          <span class="badge">Snowmobile Adventures</span>
-          <span class="badge">Lake City, Colorado</span>
+          <span class="badge">Snowmobiles</span>
+          <span class="badge">Alpine Loop Access</span>
         </div>
       </div>
     </section>
@@ -510,63 +503,63 @@
         <div class="section-head">
           <h2>Choose Your Adventure</h2>
           <p>
-            Whether you want high-alpine mountain passes, rugged backcountry exploring,
-            or winter riding in the San Juans, we’ll help you start the trip the right way.
+            Build your trip around the experience you want — from summer high-country exploration
+            to winter mountain riding.
           </p>
         </div>
 
         <div class="cards">
           <article class="card">
             <div class="card-image">
-              <img src="sxs-rental.jpg" alt="Polaris Side-by-Side rental in the Alpine Loop">
+              <img src="sxs-rental.jpg" alt="Polaris Side-by-Side rental in Lake City Colorado">
             </div>
             <div class="card-body">
               <h3>Side-by-Side Adventures</h3>
               <p>
-                Explore Engineer Pass, Cinnamon Pass, and the best backcountry routes in the San Juan Mountains.
+                Explore Engineer Pass, Cinnamon Pass, and the best Alpine Loop routes with a Polaris SXS built for the mountains.
               </p>
               <ul class="card-list">
-                <li>Polaris RZR and Ranger options</li>
-                <li>2-seat and 4-seat adventure options</li>
-                <li>Ideal for Alpine Loop exploration</li>
+                <li>Great for mountain passes and scenic routes</li>
+                <li>Perfect for couples, families, and groups</li>
+                <li>Strong fit for the full Alpine Loop experience</li>
               </ul>
-              <a class="btn btn-primary" href="#book">Book SXS Rentals</a>
+              <a class="btn btn-primary" href="#book">Book SXS Adventure</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-image">
-              <img src="jeep-rental.jpg" alt="Jeep Wrangler rental in Lake City Colorado">
+              <img src="jeep-rental.jpg" alt="Jeep Wrangler rentals on the Alpine Loop">
             </div>
             <div class="card-body">
               <h3>Jeep Adventures</h3>
               <p>
-                Take the historic Alpine Loop in a Jeep Wrangler and experience Colorado mountain driving the right way.
+                Take a Jeep Wrangler through historic mining roads, mountain scenery, and unforgettable Colorado backcountry.
               </p>
               <ul class="card-list">
-                <li>4-door Wrangler options</li>
-                <li>Perfect for groups and families</li>
-                <li>Built for scenic mountain routes</li>
+                <li>Ideal for families and comfort-focused explorers</li>
+                <li>Strong road presence for Alpine Loop travel</li>
+                <li>Classic Colorado off-road experience</li>
               </ul>
-              <a class="btn btn-primary" href="#book">Book Jeep Rentals</a>
+              <a class="btn btn-primary" href="#book">Book Jeep Adventure</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-image">
-             <img src="snowmobile-rental.jpg" alt="Snowmobile rental in the San Juan Mountains">
+              <img src="snowmobile-rental.jpg" alt="Snowmobile rentals in the San Juan Mountains">
             </div>
             <div class="card-body">
               <h3>Snowmobile Adventures</h3>
               <p>
-                Discover winter in Lake City with a snowmobile experience through deep snow and unforgettable views.
+                When winter hits Lake City, trade mountain passes for deep snow, cold air, and a true San Juan snowmobile experience.
               </p>
               <ul class="card-list">
-                <li>Winter backcountry access</li>
-                <li>Great for snow season visitors</li>
-                <li>Scenic San Juan mountain experience</li>
+                <li>Seasonal winter adventure offering</li>
+                <li>Built for snow-country exploration</li>
+                <li>Great addition to your year-round tourism mix</li>
               </ul>
-              <a class="btn btn-primary" href="#book">Book Snowmobiles</a>
+              <a class="btn btn-primary" href="#book">Book Snowmobile Adventure</a>
             </div>
           </article>
         </div>
@@ -578,53 +571,69 @@
         <div class="section-head">
           <h2>Why Rent With Alpine Loop Adventures</h2>
           <p>
-            We’re building this business around the full Lake City experience — better equipment,
-            stronger local positioning, and an easier path from booking to adventure.
+            This business should sell more than equipment. It should sell the full Lake City experience, with the right fleet and the right location.
           </p>
         </div>
 
-        <div class="why-grid">
-          <div class="why-item">
+        <div class="features">
+          <div class="feature">
             <div class="icon">🏔️</div>
-            <h4>Prime Location</h4>
-            <p>Start your trip from Lake City, one of the best gateways to the Alpine Loop.</p>
+            <h4>Prime Lake City Access</h4>
+            <p>Start close to the routes people actually come here to see.</p>
           </div>
-          <div class="why-item">
+          <div class="feature">
             <div class="icon">🚙</div>
-            <h4>Strong Fleet</h4>
-            <p>Side-by-Sides, Jeeps, and winter equipment positioned for adventure travel.</p>
+            <h4>Multiple Adventure Types</h4>
+            <p>Side-by-Sides, Jeeps, and Snowmobiles for different seasons and customers.</p>
           </div>
-          <div class="why-item">
+          <div class="feature">
             <div class="icon">🧭</div>
-            <h4>Trail-Focused</h4>
-            <p>Built specifically around the Alpine Loop and the San Juan mountain experience.</p>
+            <h4>Experience-Focused</h4>
+            <p>Built around the Alpine Loop, not a generic rental template.</p>
           </div>
-          <div class="why-item">
+          <div class="feature">
             <div class="icon">⚙️</div>
-            <h4>Polaris Connection</h4>
-            <p>Love what you ride? Shop Polaris inventory through Lake City Auto.</p>
+            <h4>Buy What You Love</h4>
+            <p>Connect adventure renters directly to Polaris sales at Lake City Auto.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="book">
+    <section id="routes">
       <div class="container split">
         <div class="panel">
           <div class="panel-content">
-            <h3>Start Planning Your Trip</h3>
+            <h3>Illustrate the Full Experience</h3>
             <p>
-              Online booking, live availability, waivers, and trip reminders will be added here.
-              For now, this section is the staging area for your future booking engine.
+              This is where your future map, route guide, and trip planning content should live. Use this section to help visitors picture what their day looks like before they ever book.
             </p>
-            <div class="stack">
-              <a class="btn btn-primary" href="#">Booking Calendar Coming Soon</a>
-              <a class="btn btn-secondary" href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">View Polaris Inventory</a>
-            </div>
+            <ul class="map-list">
+              <li>Engineer Pass</li>
+              <li>Cinnamon Pass</li>
+              <li>Historic mountain mining routes</li>
+              <li>Family-friendly scenic options</li>
+              <li>Seasonal snowmobile experiences</li>
+            </ul>
           </div>
         </div>
 
         <div class="panel photo-panel"></div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="container">
+        <div class="booking-strip">
+          <h3>Plan Your Rental Adventure</h3>
+          <p>
+            Live booking, machine availability, waivers, reminder emails, and customer trip flow will plug into this section once you are ready to activate the business publicly.
+          </p>
+          <div class="stack" style="justify-content:center;">
+            <a class="btn btn-primary" href="#">Booking Calendar Coming Soon</a>
+            <a class="btn btn-secondary" href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">Shop Polaris Inventory</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -635,11 +644,13 @@
       <div class="footer-links">
         <a href="#adventures">Adventures</a>
         <a href="#why-us">Why Us</a>
+        <a href="#routes">Experience</a>
         <a href="#book">Book</a>
-        <a href="https://www.lakecityauto.com" target="_blank" rel="noopener noreferrer">Buy a Polaris</a>
       </div>
     </div>
   </footer>
 
+</body>
+</html>
 </body>
 </html>
